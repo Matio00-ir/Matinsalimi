@@ -1,0 +1,120 @@
+.work {
+  padding-block-start: var(--section-y);
+}
+
+/* Project index: a register, not a card grid. */
+.index {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: var(--s-9);
+  border-block-start: var(--border);
+}
+
+.indexItem {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-4);
+  padding-block: var(--s-4);
+  border-block-end: var(--border);
+  transition:
+    padding var(--dur-base) var(--ease-out),
+    color var(--dur-fast);
+}
+
+.indexName {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  letter-spacing: var(--tr-tight);
+  line-height: 1.1;
+  justify-self: start;
+}
+
+.indexCat {
+  justify-self: end;
+  text-align: end;
+}
+
+@media (hover: hover) {
+  .indexItem:hover {
+    padding-inline-start: var(--s-4);
+  }
+  .indexItem:hover .indexName {
+    color: var(--c-accent);
+  }
+}
+
+/* Floating HUD while scrolling through projects. */
+.hud {
+  position: fixed;
+  inset-block-end: var(--s-5);
+  inset-inline-start: 50%;
+  z-index: var(--z-hud);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 40px;
+  padding-inline: var(--s-4);
+  border: var(--border);
+  background: rgba(11, 11, 12, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--c-fg-2);
+  translate: -50% 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    translate var(--dur-base) var(--ease-out);
+}
+
+:global([dir="rtl"]) .hud {
+  translate: 50% 16px;
+}
+
+.hud[data-visible] {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+:global([dir="rtl"]) .hud[data-visible] {
+  translate: 50% 0;
+}
+
+.hudName {
+  min-width: 96px;
+  color: var(--c-fg);
+}
+
+.hudTrack {
+  width: 72px;
+  height: 1px;
+  background: var(--c-line-strong);
+  overflow: hidden;
+}
+
+.hudTrack i {
+  display: block;
+  height: 100%;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+:global([dir="rtl"]) .hudTrack i {
+  transform-origin: right;
+}
+
+@media (max-width: 639.98px) {
+  .indexItem {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .indexCat {
+    grid-column: 2;
+    justify-self: start;
+    text-align: start;
+    font-size: var(--fs-sm);
+  }
+  .hud {
+    inset-block-end: var(--s-4);
+  }
+}

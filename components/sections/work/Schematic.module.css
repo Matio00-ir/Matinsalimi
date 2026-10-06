@@ -1,0 +1,252 @@
+.canvas {
+  position: absolute;
+  inset: 0;
+  direction: ltr;
+}
+
+.frag {
+  position: absolute;
+  padding: clamp(8px, 1.4%, 18px);
+  border: var(--border);
+  background: var(--c-bg-raise);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 0.9vw, 12px);
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* primitives */
+.line,
+.lineDim,
+.lineAcc,
+.value,
+.title {
+  display: block;
+  flex: none;
+  height: clamp(4px, 0.45vw, 7px);
+  background: var(--c-fg-3);
+}
+.lineDim {
+  background: var(--c-graphite-2);
+}
+.lineAcc {
+  background: var(--c-accent);
+}
+.value {
+  height: clamp(12px, 1.5vw, 24px);
+  background: var(--c-fg);
+}
+.title {
+  height: clamp(10px, 1.6vw, 26px);
+  background: var(--c-fg);
+}
+.delta {
+  display: block;
+  width: 14%;
+  height: clamp(4px, 0.45vw, 7px);
+  background: var(--c-accent);
+}
+.logo {
+  display: block;
+  width: 28%;
+  aspect-ratio: 1;
+  background: var(--c-fg);
+  margin-block-end: 12%;
+}
+.button {
+  display: block;
+  width: 34%;
+  height: clamp(14px, 2vw, 32px);
+  background: var(--c-accent);
+  flex: none;
+}
+.media {
+  display: block;
+  flex: 1;
+  background:
+    linear-gradient(135deg, transparent 49.6%, var(--c-line) 50%, transparent 50.4%),
+    var(--c-graphite);
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+.svgFit {
+  width: 100%;
+  height: 100%;
+}
+
+.kpi {
+  justify-content: center;
+}
+
+/* table */
+.rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  padding-block: 2%;
+  border-block-end: var(--border);
+}
+.chip,
+.chipAcc {
+  display: block;
+  margin-inline-start: auto;
+  width: 6%;
+  height: clamp(6px, 0.7vw, 10px);
+  background: var(--c-graphite-2);
+}
+.chipAcc {
+  background: var(--c-accent);
+}
+
+/* banner */
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4%;
+  height: 100%;
+}
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(6px, 0.9vw, 12px);
+}
+
+/* tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(6px, 1vw, 14px);
+  height: 100%;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 8px);
+  min-height: 0;
+}
+
+/* lists */
+.stackList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 14px);
+  height: 100%;
+}
+.cartRow,
+.person {
+  display: flex;
+  align-items: center;
+  gap: 8%;
+}
+.cartRow span,
+.person span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.thumb {
+  display: block;
+  width: 22%;
+  aspect-ratio: 1;
+  background: var(--c-graphite-2);
+}
+.avatar {
+  display: block;
+  width: clamp(14px, 1.8vw, 28px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--c-graphite-2);
+  flex: none;
+}
+.dot,
+.dotAcc {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--c-fg-3);
+  flex: none;
+}
+.dotAcc {
+  background: var(--c-accent);
+}
+
+/* calendar */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: clamp(3px, 0.5vw, 8px);
+  height: 100%;
+}
+.day,
+.dayOn,
+.dayAcc {
+  display: block;
+  border: var(--border);
+}
+.dayOn {
+  background: var(--c-graphite-2);
+}
+.dayAcc {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+/* slots */
+.slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(4px, 0.7vw, 10px);
+  height: 100%;
+  align-content: start;
+}
+.slot,
+.slotAcc,
+.slotOff {
+  display: block;
+  height: clamp(12px, 1.8vw, 28px);
+  border: 1px solid var(--c-line-strong);
+}
+.slotAcc {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+.slotOff {
+  border-style: dashed;
+  opacity: 0.4;
+}
+
+/* program */
+.program {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: clamp(4px, 0.7vw, 10px);
+  height: 100%;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 8px);
+}
+.block,
+.blockAcc {
+  display: block;
+  height: 26%;
+  background: var(--c-graphite-2);
+}
+.blockAcc {
+  background: var(--c-accent);
+}

@@ -1,0 +1,59 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--s-4);
+  padding: var(--gutter);
+  background: var(--c-bg);
+  clip-path: inset(0 0 0 0);
+  /* Failsafe: never trap the page if JS doesn't run. */
+  animation: failsafe 0s 5s forwards;
+}
+
+@keyframes failsafe {
+  to {
+    visibility: hidden;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: var(--c-fg-2);
+}
+
+.line {
+  display: block;
+}
+
+.slash {
+  color: var(--c-accent);
+  padding-inline: var(--s-1);
+}
+
+.count {
+  color: var(--c-fg);
+  direction: ltr;
+}
+
+.track {
+  height: 1px;
+  background: var(--c-line);
+  overflow: hidden;
+}
+
+.track i {
+  display: block;
+  height: 100%;
+  background: var(--c-fg);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+:global([dir="rtl"]) .track i {
+  transform-origin: right;
+}

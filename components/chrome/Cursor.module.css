@@ -1,0 +1,38 @@
+.cursor {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pill {
+  position: absolute;
+  inset: 14px auto auto 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding-inline: 10px;
+  background: var(--c-fg);
+  color: var(--c-bg);
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: top left;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.pill::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--c-accent);
+}
+
+.pill[data-visible] {
+  opacity: 1;
+  transform: none;
+}

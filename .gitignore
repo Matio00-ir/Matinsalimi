@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+
+# local / editor
+.claude/
+.cap/
+*.tsbuildinfo
+.DS_Store
+
+# env files
+.env*
+!.env.example

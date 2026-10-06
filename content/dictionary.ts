@@ -1,0 +1,148 @@
+import type { Locale } from "./types";
+
+const fa = {
+  meta: {
+    title: "متین سلیمی — توسعه‌دهنده فول‌استک",
+    description: "سیستم‌های دیجیتال می‌سازم، نه فقط وبسایت: ERP و CRM، فروشگاه اینترنتی، SaaS، اتوماسیون و داشبورد.",
+  },
+  nav: { work: "نمونه‌کارها", capabilities: "توانمندی‌ها", about: "درباره", contact: "تماس", menu: "منو", close: "بستن", skip: "رفتن به محتوا" },
+  loader: { status: "در حال راه‌اندازی سیستم" },
+  hero: {
+    roles: ["توسعه‌دهنده فول‌استک", "سازنده سیستم", "مهندس محصول دیجیتال"],
+    statement: "سیستم دیجیتال می‌سازم، نه فقط وبسایت.",
+    availability: "پذیرای پروژه جدید",
+    scroll: "اسکرول",
+    index: "پورتفولیو",
+  },
+  process: {
+    label: "فرایند",
+    heading: "از ایده، تا سیستم، تا محصول.",
+    intro: "هر پروژه همین مسیر را طی می‌کند. اسکرول کنید تا ساخته شدن یک سیستم را لایه به لایه ببینید.",
+    step: "مرحله",
+    live: "زنده",
+    pipeline: ["ساخت", "تست", "انتشار"],
+  },
+  work: {
+    label: "نمونه‌کارها",
+    heading: "سیستم‌هایی که ساخته‌ام.",
+    intro: "هر پروژه با یک مسئله واقعی شروع شد.",
+    problem: "مسئله",
+    solution: "راه‌حل",
+    scope: "دامنه کار",
+    stack: "تکنولوژی",
+    result: "نتیجه",
+    live: "مشاهده سایت",
+    github: "گیت‌هاب",
+    caseStudy: "مطالعه موردی",
+    schematic: "شماتیک رابط",
+    status: { live: "فعال", beta: "بتای خصوصی", prototype: "پروتوتایپ", internal: "سیستم داخلی" },
+    of: "از",
+  },
+  capabilities: {
+    label: "توانمندی‌ها",
+    heading: "چه چیزی می‌سازم.",
+    stack: "ابزار رایج",
+    related: "پروژه‌های مرتبط",
+  },
+  about: {
+    label: "درباره",
+    statement: "فقط کد نمی‌نویسم. مسئله را می‌فهمم، سیستم را طراحی می‌کنم و محصول می‌سازم.",
+    body: "متین سلیمی هستم؛ توسعه‌دهنده فول‌استک با پنج سال تجربه در ساخت وبسایت‌ها، داشبوردهای مدیریتی و سیستم‌های ERP و CRM. پیش‌زمینه‌ام در مدیریت کسب‌وکار باعث می‌شود نرم‌افزار را از زاویه کسب‌وکار ببینم: از مدل داده تا آخرین جزئیات رابط، هر تصمیم باید به حل یک مسئله واقعی کمک کند.",
+    facts: [
+      ["نقش", "توسعه‌دهنده فول‌استک"],
+      ["تجربه", "+۵ سال"],
+      ["تحصیلات", "کارشناسی مدیریت کسب‌وکار · دانشجوی MBA"],
+      ["تمرکز", "سیستم‌های کسب‌وکار، SaaS، فروشگاه اینترنتی"],
+      ["زبان کاری", "فارسی، انگلیسی"],
+    ] as [string, string][],
+  },
+  contact: {
+    label: "تماس",
+    heading: ["پروژه‌ای", "در ذهن دارید؟"],
+    sub: "بیایید بسازیمش.",
+    intentLabel: "از کجا شروع کنیم؟",
+    intents: ["یک ایده دارم", "سیستم کسب‌وکار لازم دارم", "فروشگاه اینترنتی لازم دارم", "به یک توسعه‌دهنده نیاز دارم", "می‌خواهم درباره یک پروژه صحبت کنم"],
+    cta: "شروع گفتگو",
+    copy: "کپی",
+    copied: "کپی شد",
+    notConfigured: "راه‌های تماس هنوز تنظیم نشده‌اند. content/site.ts را کامل کنید.",
+  },
+  footer: { built: "طراحی و توسعه از صفر توسط متین سلیمی", top: "بازگشت به بالا", local: "ساعت محلی" },
+  cursor: { view: "مشاهده", open: "باز کردن" },
+};
+
+type Dictionary = typeof fa;
+
+const en: Dictionary = {
+  meta: {
+    title: "Matin Salimi — Full-Stack Developer",
+    description: "Building digital systems, not just websites: ERP & CRM, e-commerce, SaaS, automation and dashboards.",
+  },
+  nav: { work: "Work", capabilities: "Capabilities", about: "About", contact: "Contact", menu: "Menu", close: "Close", skip: "Skip to content" },
+  loader: { status: "Initializing system" },
+  hero: {
+    roles: ["Full-stack developer", "System builder", "Digital product engineer"],
+    statement: "Building digital systems, not just websites.",
+    availability: "Open to new projects",
+    scroll: "Scroll",
+    index: "Portfolio",
+  },
+  process: {
+    label: "Process",
+    heading: "From idea, to system, to product.",
+    intro: "Every project travels the same path. Scroll to watch a system get built, layer by layer.",
+    step: "Step",
+    live: "Live",
+    pipeline: ["Build", "Test", "Deploy"],
+  },
+  work: {
+    label: "Selected work",
+    heading: "Systems I've built.",
+    intro: "Each project started with a real problem.",
+    problem: "Problem",
+    solution: "Solution",
+    scope: "Scope",
+    stack: "Technology",
+    result: "Result",
+    live: "Visit site",
+    github: "GitHub",
+    caseStudy: "Case study",
+    schematic: "Interface schematic",
+    status: { live: "Live", beta: "Private beta", prototype: "Prototype", internal: "Internal system" },
+    of: "of",
+  },
+  capabilities: {
+    label: "Capabilities",
+    heading: "What I build.",
+    stack: "Typical stack",
+    related: "Related work",
+  },
+  about: {
+    label: "About",
+    statement: "I don't just write code. I understand problems, design systems and build products.",
+    body: "I'm Matin Salimi — a full-stack developer with five years of experience building websites, admin dashboards and ERP/CRM systems. A background in business management means I look at software from the business side: from the data model to the last interface detail, every decision should help solve a real problem.",
+    facts: [
+      ["Role", "Full-stack developer"],
+      ["Experience", "5+ years"],
+      ["Education", "BA Business Management · MBA candidate"],
+      ["Focus", "Business systems, SaaS, e-commerce"],
+      ["Languages", "Persian, English"],
+    ],
+  },
+  contact: {
+    label: "Contact",
+    heading: ["Have a project", "in mind?"],
+    sub: "Let's build it.",
+    intentLabel: "Where do we start?",
+    intents: ["I have an idea", "I need a business system", "I need an e-commerce platform", "I need a developer", "I want to discuss a project"],
+    cta: "Start the conversation",
+    copy: "Copy",
+    copied: "Copied",
+    notConfigured: "Contact channels aren't configured yet. Fill in content/site.ts.",
+  },
+  footer: { built: "Designed & engineered from scratch by Matin Salimi", top: "Back to top", local: "Local time" },
+  cursor: { view: "View", open: "Open" },
+};
+
+export const dictionaries: Record<Locale, Dictionary> = { fa, en };
+export type { Dictionary };

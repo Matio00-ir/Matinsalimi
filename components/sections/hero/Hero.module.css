@@ -38,6 +38,7 @@
 
 .edgeRow {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,6 +111,29 @@
   }
 }
 
+/* ---- portrait: sits between the name (behind) and the copy (in front) ---- */
+.portrait {
+  position: absolute;
+  z-index: 1;
+  inset-block-end: 0;
+  /* Physical `left`: centring with translate must not flip in RTL. */
+  left: 50%;
+  height: 86svh;
+  aspect-ratio: 531 / 1073;
+  translate: -50% 0;
+  pointer-events: none;
+  /* The photo is cropped at the waist; fade it into the floor instead of a hard edge. */
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 98%);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
 /* ---- center composition ---- */
 .center {
   position: relative;
@@ -122,6 +146,8 @@
 }
 
 .name {
+  position: relative;
+  z-index: 0;
   font-weight: 600;
   line-height: 1;
 }
@@ -137,8 +163,11 @@
   will-change: transform;
 }
 
+/* Wide tracking so the letters clear the portrait and the name still reads behind it.
+   A flex gap (not letter-spacing) keeps each line optically centred. */
 .nameLine {
   display: flex;
+  gap: 0.22em;
 }
 
 .letterMask {
@@ -153,6 +182,7 @@
 
 .roles {
   position: relative;
+  z-index: 2;
   margin-block-start: var(--s-5);
   overflow: hidden;
   height: calc(var(--fs-xl) * 1.3);
@@ -168,6 +198,8 @@
   line-height: 1.3;
   letter-spacing: var(--tr-tight);
   white-space: nowrap;
+  /* Keeps the line legible where it crosses the portrait. */
+  text-shadow: 0 2px 18px rgba(11, 11, 12, 0.55);
 }
 
 /* Without motion only the first role shows. */
@@ -176,6 +208,8 @@
 }
 
 .statementWrap {
+  position: relative;
+  z-index: 2;
   margin-block-start: var(--s-6);
   max-width: 18ch;
   font-size: var(--fs-2xl);
@@ -210,8 +244,14 @@
 }
 
 @media (max-width: 959.98px) {
+  .portrait {
+    height: 60svh;
+  }
   .nameInner {
-    font-size: 23vw;
+    font-size: 17vw;
+  }
+  .nameLine {
+    gap: 0.1em;
   }
   .role {
     font-size: clamp(20px, 6vw, 28px);

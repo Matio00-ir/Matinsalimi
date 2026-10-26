@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { useSite } from "@/components/providers/SiteProvider";
 import { SplitWords } from "@/components/ui/SplitWords";
 import { LocalTime } from "@/components/ui/LocalTime";
@@ -16,6 +17,7 @@ const NAME_LINES = ["MATIN", "SALIMI"];
  * Opening scene. A sticky stage scrubbed by scroll:
  * the name recedes, the role line cycles (developer → system builder → product engineer),
  * then the statement resolves and an accent rule hands off to the Process scene.
+ * The portrait stands in front of the name and sinks away before the statement lands.
  */
 export function Hero() {
   const { dict, locale, ready } = useSite();
@@ -62,6 +64,7 @@ export function Hero() {
           .to(roleEls[2], { yPercent: 0, duration: 0.14 }, 0.48)
           .to(q(`.${s.roles}`), { y: () => -window.innerHeight * (narrow() ? 0.14 : 0.26), duration: 0.3, ease: "power1.inOut" }, 0.5)
           .to(q(`.${s.statement} .wi`), { opacity: 1, yPercent: 0, duration: 0.08, stagger: 0.03, ease: "power2.out" }, 0.62)
+          .to(q(`.${s.portrait}`), { yPercent: 22, autoAlpha: 0, duration: 0.3, ease: "power1.in" }, 0.3)
           .to(q(`.${s.bridge}`), { scaleX: 1, duration: 0.14 }, 0.86)
           .to(q(`.${s.scroll}`), { autoAlpha: 0, duration: 0.08 }, 0.02);
       },
@@ -82,6 +85,7 @@ export function Hero() {
           .timeline({ delay: 0.05 })
           .set(q("[data-intro]"), { visibility: "visible" })
           .from(q(`.${s.letter}`), { yPercent: 110, duration: 1.5, ease: ease.out, stagger: 0.06 })
+          .from(q(`.${s.portrait}`), { yPercent: 14, autoAlpha: 0, duration: 1.6, ease: ease.out }, 0.15)
           .from(q(`.${s.rolesInner}`), { yPercent: 110, duration: 1.2, ease: ease.out }, 0.35)
           .from(q(`.${s.edge}`), { autoAlpha: 0, y: 12, duration: 1, ease: ease.out, stagger: 0.08 }, 0.5)
           .from(q(`.${s.statementWrap}`), { autoAlpha: 0, duration: 1 }, 0.6);
@@ -107,6 +111,17 @@ export function Hero() {
           <span className={`${s.edge} ${s.status}`} data-intro>
             <i aria-hidden="true" /> {dict.hero.availability}
           </span>
+        </div>
+
+        <div className={s.portrait} data-intro>
+          <Image
+            src="/images/matin.webp"
+            alt=""
+            width={531}
+            height={1073}
+            priority
+            sizes="(max-width: 959.98px) 70vw, 40vh"
+          />
         </div>
 
         <div className={s.center}>

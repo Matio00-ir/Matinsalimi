@@ -224,39 +224,6 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "aramesh-clinic",
-    order: 9,
-    featured: true,
-    wordmark: "ARAMESH",
-    title: { fa: "کلینیک آرامش", en: "Aramesh Clinic" },
-    category: { fa: "سایت کلینیک و نوبت‌دهی آنلاین", en: "Clinic website & online booking" },
-    summary: {
-      fa: "سایت کلینیک روان‌پزشکی با نوبت‌دهی، پرداخت آنلاین و مقالات.",
-      en: "A psychiatry clinic website with appointment booking, online payment and articles.",
-    },
-    problem: {
-      fa: "بیماران باید بتوانند زمان‌های خالی پزشک را ببینند و آنلاین نوبت بگیرند و پرداخت کنند.",
-      en: "Patients need to see doctors' open slots, then book and pay online.",
-    },
-    solution: {
-      fa: "فرانت‌اند Mobile-First و بک‌اند سبک با زمان‌بندی پزشکان و اتصال آماده به درگاه پرداخت.",
-      en: "A mobile-first frontend and a lightweight backend with doctor schedules and a payment gateway integration.",
-    },
-    highlights: [
-      { fa: "نوبت‌دهی بر اساس زمان‌های خالی پزشک", en: "Booking against doctors' available slots" },
-      { fa: "اتصال درگاه پرداخت زرین‌پال", en: "Zarinpal payment gateway integration" },
-      { fa: "دیتابیس فایلی SQLite؛ بدون نیاز به سرور دیتابیس", en: "File-based SQLite — no database server to run" },
-    ],
-    stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "SQLite"],
-    capabilities: ["web-apps", "business-systems"],
-    schematic: "booking",
-    media: [
-      { src: "/work/aramesh-clinic/home.webp", alt: { fa: "صفحه اصلی", en: "Home page" }, width: 2400, height: 1500 },
-      { src: "/work/aramesh-clinic/booking.webp", alt: { fa: "رزرو نوبت مرحله‌به‌مرحله", en: "Step-by-step booking" }, width: 2400, height: 1500 },
-      { src: "/work/aramesh-clinic/blog.webp", alt: { fa: "مجله سلامت روان", en: "Mental-health journal" }, width: 2400, height: 1500 },
-    ],
-  },
-  {
     slug: "yadak-mart",
     order: 7,
     featured: true,
@@ -326,40 +293,6 @@ const projects: Project[] = [
       { src: "/work/pars-thermal/products.webp", alt: { fa: "کاتالوگ محصولات", en: "Product catalogue" }, width: 2400, height: 1500 },
       { src: "/work/pars-thermal/admin-products.webp", alt: { fa: "پنل مدیریت: محصولات", en: "Admin: products" }, width: 2400, height: 1500 },
       { src: "/work/pars-thermal/admin-dashboard.webp", alt: { fa: "پنل مدیریت: داشبورد", en: "Admin: dashboard" }, width: 2400, height: 1500 },
-    ],
-  },
-  {
-    slug: "laneh",
-    order: 10,
-    featured: true,
-    wordmark: "LANEH",
-    title: { fa: "لانه", en: "Laneh" },
-    category: { fa: "فروشگاه دکوراسیون و اشیای خانه", en: "Home-decor storefront" },
-    status: "prototype",
-    summary: {
-      fa: "فروشگاه روشنایی، دکور، گلدان، آینه و مبلمان کوچک با طراحی آرام و ادیتوریال.",
-      en: "A storefront for lighting, decor, vases, mirrors and small furniture, with a calm, editorial design.",
-    },
-    problem: {
-      fa: "برندی با محصولات گزیده به ویترینی نیاز دارد که حس محصول را منتقل کند، نه یک قالب شلوغ فروشگاهی.",
-      en: "A curated brand needs a storefront that conveys the feel of its products, not a crowded shop template.",
-    },
-    solution: {
-      fa: "ویترین سبک بدون فریم‌ورک: صفحه اصلی، فروشگاه با فیلتر، صفحه محصول با رنگ‌بندی، سبد خرید و تسویه.",
-      en: "A framework-free storefront: home, filterable shop, product pages with colour options, basket and checkout.",
-    },
-    highlights: [
-      { fa: "فیلتر دسته‌بندی و مرتب‌سازی", en: "Category filters and sorting" },
-      { fa: "انتخاب رنگ و تعداد در صفحه محصول", en: "Colour and quantity selection on product pages" },
-      { fa: "سبد خرید و تسویه سمت کاربر", en: "Client-side basket and checkout" },
-    ],
-    stack: ["HTML", "CSS", "JavaScript"],
-    capabilities: ["ecommerce"],
-    schematic: "commerce",
-    media: [
-      { src: "/work/laneh/home.webp", alt: { fa: "صفحه اصلی", en: "Home page" }, width: 2400, height: 1500 },
-      { src: "/work/laneh/shop.webp", alt: { fa: "همه محصولات", en: "All products" }, width: 2400, height: 1500 },
-      { src: "/work/laneh/product.webp", alt: { fa: "صفحه محصول", en: "Product page" }, width: 2400, height: 1500 },
     ],
   },
 ];

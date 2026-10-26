@@ -13,8 +13,8 @@ export const site = {
    * Empty values are hidden in the UI — nothing fake is ever rendered.
    */
   contact: {
-    email: "",
-    telegram: "", // username without @
+    email: "m.matin.salimi@gmail.com",
+    telegram: "matio007", // username without @
     linkedin: "", // full URL
     github: "", // full URL
   },

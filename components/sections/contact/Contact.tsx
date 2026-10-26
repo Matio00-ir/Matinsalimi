@@ -8,27 +8,17 @@ import { site } from "@/content/site";
 import { useReveal } from "@/hooks/useReveal";
 import s from "./Contact.module.css";
 
-/** The conclusion of the story: pick what you need, then one clear action. */
+/** The conclusion of the story: pick what you need, then reach out on Telegram or by email. */
 export function Contact() {
   const { dict } = useSite();
   const root = useRef<HTMLElement>(null);
   const [intent, setIntent] = useState(0);
-  const [copied, setCopied] = useState(false);
   useReveal(root);
 
   const { email, telegram, linkedin, github } = site.contact;
   const subject = dict.contact.intents[intent];
   const mailto = email ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : null;
   const configured = Boolean(email || telegram);
-
-  const copy = async () => {
-    if (!email) return;
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-    } catch {}
-  };
 
   return (
     <section ref={root} id="contact" className={s.section} aria-labelledby="contact-title">
@@ -62,25 +52,20 @@ export function Contact() {
         </fieldset>
 
         <div className={s.actions} data-reveal>
-          {mailto && (
+          {telegram && (
             <Magnetic>
-              <a href={mailto} className={s.cta} data-cursor="open">
-                <span>{dict.contact.cta}</span>
+              <a href={`https://t.me/${telegram}`} target="_blank" rel="noreferrer" className={s.cta} data-cursor="open">
+                <span>Telegram</span>
                 <span className={s.arrow} aria-hidden="true">
                   →
                 </span>
               </a>
             </Magnetic>
           )}
-          {telegram && (
-            <a href={`https://t.me/${telegram}`} target="_blank" rel="noreferrer" className={s.secondary} data-cursor="open">
-              Telegram ↗
+          {mailto && (
+            <a href={mailto} className={`${s.secondary} latin`} data-cursor="open">
+              {email} ↗
             </a>
-          )}
-          {email && (
-            <button type="button" onClick={copy} className={`${s.secondary} latin`} aria-live="polite">
-              {email} <span className="mono muted">{copied ? dict.contact.copied : dict.contact.copy}</span>
-            </button>
           )}
           {!configured && process.env.NODE_ENV !== "production" && <p className={`${s.todo} mono`}>{dict.contact.notConfigured}</p>}
         </div>

@@ -10,7 +10,6 @@ import { Process } from "@/components/sections/process/Process";
 import { Work } from "@/components/sections/work/Work";
 import { Capabilities } from "@/components/sections/capabilities/Capabilities";
 import { About } from "@/components/sections/about/About";
-import { Contact } from "@/components/sections/contact/Contact";
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -27,7 +26,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <Work />
         <Capabilities />
         <About />
-        <Contact />
       </main>
       <Footer />
     </SiteProvider>

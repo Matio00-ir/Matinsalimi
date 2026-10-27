@@ -6,7 +6,7 @@ import { LOCALE_COOKIE } from "@/lib/i18n";
 import { ScrollTrigger } from "@/lib/motion";
 import s from "./Nav.module.css";
 
-const SECTIONS = ["work", "capabilities", "about", "contact"] as const;
+const SECTIONS = ["work", "capabilities", "about"] as const;
 type SectionId = (typeof SECTIONS)[number];
 
 export function Nav() {
